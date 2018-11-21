@@ -1,0 +1,15 @@
+// bootstrap
+// $font-family-sans-serif: Roboto, sans-serif;
+// $font-family-monospace: "Roboto Mono", Consolas, monospace;
+$body-color: #353637;
+$primary: #00F6F6;
+$secondary: #FFEA7D;
+$jumbotron-bg: transparent;
+
+$headings-font-family: 'Roboto Slab', serif;
+$link-color:#054FF6;
+$link-hover-color: #fff;
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
