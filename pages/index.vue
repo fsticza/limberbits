@@ -166,53 +166,110 @@
           </div>
         </div>
 
-        <form
-          method="POST"
-          action="https://formspree.io/info@limberbits.com"
-          class="col-sm-6">
-          <div class="form-group">
-            <label for="name">Name</label>
+        <div class="col-sm-6">
+          <form
+            action="https://formspree.io/info@limberbits.com"
+            method="POST"
+            class="needs-validation"
+            novalidate
+            @submit.prevent="onContactSubmit">
+
+            <div class="form-group">
+              <label
+                class="form-label"
+                for="name-field">Full name</label>
+              <input
+                id="name-field"
+                type="text"
+                class="form-control"
+                name="name"
+                minlength="2"
+                maxlength="50"
+                required >
+              <div class="invalid-feedback">
+                Please provide a valid name.
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label
+                class="form-label"
+                for="email-field">Email</label>
+              <input
+                id="email-field"
+                type="email"
+                class="form-control"
+                name="email"
+                maxlength="50"
+                required >
+              <div class="invalid-feedback">
+                Please provide a valid email.
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label
+                class="form-label"
+                for="phone-field">Phone</label>
+              <input
+                id="phone-field"
+                type="tel"
+                class="form-control"
+                name="tel"
+                maxlength="30"
+                required >
+              <div class="invalid-feedback">
+                Please provide a valid phone number.
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label
+                class="form-label"
+                for="message-field">Message (optional)</label>
+              <textarea
+                id="message-field"
+                class="form-control"
+                minlength="10"
+                maxlength="200"
+                name="message" />
+              <div class="invalid-feedback">
+                Please write at least 10 characters.
+              </div>
+            </div>
+
             <input
-              id="contact-name"
-              type="text"
-              class="form-control"
-              name="name">
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input
-              id="contact-email"
-              type="email"
-              class="form-control"
-              name="email">
-          </div>
-          <div class="form-group">
-            <label for="tel">Tel</label>
-            <input
-              id="contact-tel"
-              type="tel"
-              class="form-control"
-              name="tel">
-          </div>
-          <div class="form-group">
-            <label for="msg">Message</label>
-            <textarea
-              id="contact-msg"
-              class="form-control"
-              name="msg" />
-          </div>
-          <button
-            type="submit"
-            class="btn btn-dark btn-block">
-            Send
-          </button>
-        </form>
+              type="hidden"
+              name="_next"
+              value="#thanks">
+
+            <button
+              type="submit"
+              class="btn btn-dark btn-block font-weight-bold">
+              Send
+            </button>
+
+          </form>
+        </div>
       </div>
 
     </section>
 
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    onContactSubmit(ev) {
+      if (ev.target.checkValidity()) {
+        ev.target.submit()
+      }
+      ev.target.classList.add('was-validated')
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 @import './assets/scss/abstracts/variables';
@@ -229,6 +286,35 @@
 
   svg {
     transform: scale(2);
+  }
+}
+
+.invalid-feedback {
+  font-weight: bold;
+}
+
+.was-validated {
+  .form-control {
+    &:invalid {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.thanks {
+  height: 1px;
+  overflow: hidden;
+  padding: 10px;
+  outline: 0;
+  opacity: 0.01;
+  color: #fff;
+  transition: opacity 0.2s, background 0.2s;
+
+  &:focus {
+    height: auto;
+    opacity: 1;
+    background: $primary;
+    margin-bottom: 20px;
   }
 }
 </style>

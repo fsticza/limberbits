@@ -4,7 +4,7 @@ module.exports = {
   mode: 'spa',
 
   router: {
-    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/limberbits/' : '',
+    // base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/limberbits/' : '',
     linkExactActiveClass: 'active',
     linkActiveClass: ''
   },
