@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="layout-wrapper">
     <header>
-      <nav class="navbar navbar-dark navbar-expand-lg main-navbar fixed-top">
+      <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
         <div class="container">
           <nuxt-link
             class="navbar-brand d-flex align-items-center"
@@ -13,7 +13,7 @@
               alt="Logo">
             <h1 class="h4 mb-0 ml-2">LimberBits</h1>
           </nuxt-link>
-          <button
+          <!-- <button
             class="navbar-toggler border-0"
             type="button"
             aria-controls="main-navbar"
@@ -29,24 +29,37 @@
                 class="nav-item nav-link"
                 to="/">Home
               </nuxt-link>
-              <nuxt-link
+              <a
                 class="nav-link nav-link"
-                to="/about">About</nuxt-link>
-              <nuxt-link
+                href="#about">About</a>
+              <a
                 class="nav-link nav-link"
-                to="/services">Services</nuxt-link>
+                href="#services">Services</a>
               <nuxt-link
                 class="nav-link nav-link"
                 to="/blog">Blog</nuxt-link>
-              <nuxt-link
+              <a
                 class="nav-link nav-link"
-                to="/contact">Contact</nuxt-link>
+                href="#contact">Contact</a>
             </div>
-          </div>
+          </div> -->
         </div>
       </nav>
     </header>
+
     <nuxt/>
+
+    <footer class="bg-secondary section main-footer text-center">
+      <div class="container">
+        2018 &copy; LimberBits | Tel:
+        <a
+          class="text-dark"
+          href="tel:+36/30-636-0775">+36/30-636-0775</a> | Email:
+        <a
+          class="text-dark"
+          href="mailto:info@limberbits.com">info@limberbits.com</a>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -58,8 +71,19 @@ $body-padding-top: $nav-paddings * 2 + $logo-height;
 
 body {
   padding-top: $body-padding-top;
+  min-height: 100vh;
 }
-.main-navbar {
-  background: $body-color;
+
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-footer {
+  margin-top: auto;
+}
+
+.section {
+  padding: 4rem 0;
 }
 </style>

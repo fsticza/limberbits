@@ -4,11 +4,12 @@
 $body-color: #353637;
 $primary: #00F6F6;
 $secondary: #FFEA7D;
+$pink: #FF408B;
 $jumbotron-bg: transparent;
+$dark: $body-color;
 
 $headings-font-family: 'Roboto Slab', serif;
-$link-color:#054FF6;
-$link-hover-color: #fff;
+$link-color: $pink;
 
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
