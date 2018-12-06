@@ -167,6 +167,9 @@
         </div>
 
         <div class="col-sm-6">
+          <!-- <div id="thanks" class="thanks" tabindex="0">
+            Thank you for your interest.
+          </div> -->
           <form
             action="https://formspree.io/info@limberbits.com"
             method="POST"
